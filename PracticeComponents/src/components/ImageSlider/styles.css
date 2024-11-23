@@ -7,11 +7,13 @@
     align-items: center;
     text-align: center;
 }
-img{
-    position: absolute;
+.current-img{
     width: 100%;
     height: 100%;
     z-index: -1;
+}
+.hide-other-img{
+    display: none;
 }
 button{
     position: absolute;

@@ -10,8 +10,8 @@ const ImageSlider = () => {
   async function getImageUrl() {
     try {
       const resp = await axios.get(`${apiBaseUrl}/v2/list?page=2&limit=5`);
-    //   console.log(resp.data);
-    setImgUrl(resp.data);
+      //   console.log(resp.data);
+      setImgUrl(resp.data);
     } catch (error) {
       console.error("Error fetching images:", error);
     }
@@ -21,37 +21,57 @@ const ImageSlider = () => {
     getImageUrl();
   }, []);
 
-  function showNext(){
-    let cpyImgUrl = [...imgUrl];
-    let popFirst = cpyImgUrl.shift();// return first element of array by removing it
-    cpyImgUrl.push(popFirst);
-    setImgUrl(cpyImgUrl);
-    setImageIndicator(imgIndicator === imgUrl.length -1 ? 0 : imgIndicator + 1 )
+  function showNext() {
+    // let cpyImgUrl = [...imgUrl];
+    // let popFirst = cpyImgUrl.shift();// return first element of array by removing it
+    // cpyImgUrl.push(popFirst);
+    // setImgUrl(cpyImgUrl);
+    setImageIndicator(
+      imgIndicator === imgUrl.length - 1 ? 0 : imgIndicator + 1
+    );
   }
-  function showPrevious(){
-    let cpyImgUrl = [...imgUrl];
-    let popLast = cpyImgUrl.pop();// return last element of array by removing it
-    cpyImgUrl.unshift(popLast);
-    setImgUrl(cpyImgUrl);
-    setImageIndicator(imgIndicator === 0? imgUrl.length-1 : imgIndicator - 1 )
+  function showPrevious() {
+    // let cpyImgUrl = [...imgUrl];
+    // let popLast = cpyImgUrl.pop();// return last element of array by removing it
+    // cpyImgUrl.unshift(popLast);
+    // setImgUrl(cpyImgUrl);
+    setImageIndicator(
+      imgIndicator === 0 ? imgUrl.length - 1 : imgIndicator - 1
+    );
   }
 
-  return <div className="wrapper">
-    <button className="prev" onClick={showPrevious}>L</button>
-    {
-        imgUrl.map((image)=> {
-            return <img key={image.id}  src={image.download_url} alt="image" />
-        })
-    }
-    <button className="next" onClick={showNext}>R</button>
-    <div className="indicator-box">
-    {
-        imgUrl.map((image,index)=>{
-            return <div key={index}  className={imgIndicator === index? "indicator active":"indicator"  }></div>
-        })
-    }
+  return (
+    <div className="wrapper">
+      <button className="prev" onClick={showPrevious}>
+        L
+      </button>
+      {imgUrl.map((image, index) => {
+        return (
+          <img
+            key={image.id}
+            src={image.download_url}
+            className={imgIndicator === index ? "current-img":"current-img hide-other-img"}
+            alt="image"
+          />
+        );
+      })}
+      <button className="next" onClick={showNext}>
+        R
+      </button>
+      <div className="indicator-box">
+        {imgUrl.map((image, index) => {
+          return (
+            <div
+              key={index}
+              className={
+                imgIndicator === index ? "indicator active" : "indicator"
+              }
+            ></div>
+          );
+        })}
+      </div>
     </div>
-  </div>;
+  );
 };
 
 export default ImageSlider;
