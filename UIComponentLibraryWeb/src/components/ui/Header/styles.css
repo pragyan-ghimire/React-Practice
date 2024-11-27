@@ -1,0 +1,42 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+.logo{
+    width: 80px;
+    cursor: pointer;
+}
+.home-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+.home-links > * {
+    padding: 8px;
+}
+.home-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.home-actions > *{
+    padding: 8px;
+}
+.search-bar{
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 3px 0 3px 30px;
+}
+.search-icon{
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+.user{
+    font-size: 24px;
+    cursor: pointer;
+}
