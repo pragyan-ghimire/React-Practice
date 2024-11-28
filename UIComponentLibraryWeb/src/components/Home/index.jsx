@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.css";
 import { Button } from "../ui/button";
 import HeroSection from "../HeroSection";
+import { FaRegStar } from "react-icons/fa";
 import {
   Card,
   CardContent,
@@ -10,6 +11,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Home = () => {
   return (
@@ -70,6 +78,49 @@ const Home = () => {
             </CardHeader>
           </Card>
         </div>
+      </div>
+
+      <div className="h-screen flex flex-col justify-center items-center gap-4 bg-slate-200">
+        <h1 className="text-4xl font-semibold text-center">
+          Join OFarm Community
+        </h1>
+        <Carousel className="w-4/5">
+          <CarouselContent>
+            {Array.from({ length: 5 }).map((_, index) => (
+              <CarouselItem key={index} className="basis-1/3">
+                <div className="p-4">
+                  <Card>
+                    <CardHeader>
+                      <div className="">
+                        <img
+                          className=""
+                          src="https://www.hexagro.io/cdn/shop/files/Clovy_Community_3.webp?v=1704687969&width=1200"
+                          alt=""
+                        />
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex">
+                        {Array.from({ length: 5 }).map((_, index) => {
+                          return <FaRegStar key={index} />;
+                        })}
+                      </div>
+                    </CardContent>
+                    <CardContent>
+                      I hesitated a bit to get the L kit model for fear it was
+                      too big, but I actually made the right choice. I can grow
+                      whatever I want and it also leaves me the space to
+                      germinate some seedlings while the others grow.
+                    </CardContent>
+                    <CardFooter>Lodovico C.</CardFooter>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </div>
   );

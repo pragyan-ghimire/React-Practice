@@ -9,7 +9,7 @@ const Header = () => {
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Yt2YOwXRwaU839P7_tNgW4B8C_QfjGVb9w&s" alt="" />
         </div>
         <div className="home-links">
-            <a href="#">Farming App</a>
+            <a href="#">OFarm App</a>
             <a href="#">Resources</a>
             <a href="#">About</a>
             <a href="#">Blog</a>
