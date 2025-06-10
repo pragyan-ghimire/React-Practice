@@ -4,7 +4,7 @@
 > Focused on **learning by doing** — small apps, components, experiments. 🚀
 
 [![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://reactjs.org/)
-[![GitHub Repo stars](https://img.shields.io/github/stars/pragyan-ghimire/ReactPractice?style=for-the-badge)](https://github.com/pragyan-ghimire/ReactPractice/stargazers)
+[![GitHub Repo stars](https://img.shields.io/github/stars/pragyan-ghimire/React-Practice?style=for-the-badge)](https://github.com/pragyan-ghimire/React-Practice/stargazers)
 
 ---
 
